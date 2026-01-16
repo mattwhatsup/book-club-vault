@@ -1,4 +1,5 @@
 import { QuartzConfig } from "./quartz/cfg"
+import { FolderContent } from "./quartz/components"
 import * as Plugin from "./quartz/plugins"
 
 /**
@@ -8,14 +9,14 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Quartz 4",
+    pageTitle: "约书吖读书会导读",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
     analytics: {
       provider: "plausible",
     },
-    locale: "en-US",
+    locale: "zh-CN",
     baseUrl: "quartz.jzhao.xyz",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
@@ -78,7 +79,7 @@ const config: QuartzConfig = {
       Plugin.AliasRedirects(),
       Plugin.ComponentResources(),
       Plugin.ContentPage(),
-      Plugin.FolderPage(),
+      Plugin.FolderPage({ pageBody: FolderContent({ showFolderCount: false, showSubfolders: false }) }),
       Plugin.TagPage(),
       Plugin.ContentIndex({
         enableSiteMap: true,

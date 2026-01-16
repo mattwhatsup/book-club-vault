@@ -113,9 +113,7 @@ export default ((opts?: Partial<FolderContentOptions>) => {
               })}
             </p>
           )}
-          <div>
-            <PageList {...listProps} />
-          </div>
+          <div>{!content && <PageList {...listProps} />}</div>
         </div>
       </div>
     )
